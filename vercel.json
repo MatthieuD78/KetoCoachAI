@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": "public",
   "builds": [
     {
       "src": "api/gemini-25-rag-cjs.js",
