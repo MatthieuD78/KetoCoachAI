@@ -196,5 +196,61 @@ Réponse format: [Conseil principal] + [Source clé] + [Action immédiate]`;
 // Instance singleton Gemini 2.5 Lightning
 const gemini25RAG = new Gemini25LightningRAG();
 
+// API endpoint Vercel
+module.exports = async function handler(req, res) {
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Méthode non autorisée' });
+    }
+
+    try {
+        const { message, userProfile } = req.body;
+        
+        if (!message) {
+            return res.status(400).json({ error: 'Message requis' });
+        }
+
+        // Profil par défaut
+        const defaultProfile = {
+            phase: 'J3',
+            weight: 79.2,
+            goal: 68,
+            ketosis: 72,
+            symptoms: ['fatigue', 'adaptation']
+        };
+
+        const profile = { ...defaultProfile, ...userProfile };
+
+        // Process Gemini 2.5 Lightning RAG
+        const result = await gemini25RAG.processGeminiQuery(message, profile);
+
+        // Métadonnées performance
+        const metadata = {
+            gemini: result.gemini,
+            cached: result.cached,
+            responseTime: result.responseTime,
+            generationTime: result.generationTime,
+            docsFound: result.docsFound,
+            timestamp: new Date().toISOString(),
+            performance: result.responseTime < 1000 ? 'Lightning' : 'Slow',
+            api: 'Google Gemini 2.5 Flash',
+            model: process.env.GEMINI_MODEL
+        };
+
+        res.status(200).json({
+            response: result.response,
+            sources: result.sources,
+            metadata
+        });
+
+    } catch (error) {
+        console.error('Gemini 2.5 Lightning RAG Error:', error);
+        res.status(500).json({ 
+            error: 'Gemini 2.5 RAG indisponible',
+            fallback: "Mode dégradé - Je reviens avec une réponse optimisée!"
+        });
+    }
+};
+
 // Export pour tests
-module.exports = { Gemini25LightningRAG, gemini25RAG };
+module.exports.Gemini25LightningRAG = Gemini25LightningRAG;
+module.exports.gemini25RAG = gemini25RAG;
