@@ -1,0 +1,6 @@
+keto-coach-ai/
+├── index.html
+├── styles.css
+├── script.js
+├── package.json
+└── vercel.json

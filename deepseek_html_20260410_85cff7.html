@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Keto Coach AI · Adaptation métabolique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">KETO COACH</span>
+                    <span class="logo-badge">AI</span>
+                </div>
+                <div class="user-badge">
+                    <span class="user-name">Sophie</span>
+                    <span class="premium-tag">Premium</span>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-value">79.2</span>
+                    <span class="stat-unit">kg</span>
+                    <span class="stat-change">▼2.8</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">J3</span>
+                    <span class="stat-label">Phase adaptation</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">72%</span>
+                    <span class="stat-label">Cétose</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-btn active" data-tab="suivi">Suivi</button>
+            <button class="nav-btn" data-tab="anticiper">Anticiper</button>
+            <button class="nav-btn" data-tab="coach">Coach IA</button>
+        </nav>
+
+        <!-- Tab: Suivi -->
+        <div id="suivi" class="tab-content active">
+            <div class="weight-card">
+                <div class="weight-header">
+                    <span>Progression vers objectif</span>
+                    <span class="weight-percent">20%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+                <div class="weight-details">
+                    <div>Objectif: <strong>68 kg</strong></div>
+                    <div>Perdu: <strong class="success">2.8 kg</strong></div>
+                    <div>Reste: <strong>11.2 kg</strong></div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span>Courbe de poids</span>
+                    <span class="trend">▼ -0.93kg/jour</span>
+                </div>
+                <div class="chart-bars">
+                    <div class="bar-item"><span class="bar-label">31/03</span><div class="bar" style="height: 82%"></div><span>82</span></div>
+                    <div class="bar-item"><span class="bar-label">01/04</span><div class="bar" style="height: 81%"></div><span>81.2</span></div>
+                    <div class="bar-item"><span class="bar-label">02/04</span><div class="bar" style="height: 80%"></div><span>80.5</span></div>
+                    <div class="bar-item"><span class="bar-label">03/04</span><div class="bar" style="height: 79%"></div><span>79.2</span></div>
+                </div>
+                <button class="btn-secondary">Enregistrer mon poids aujourd'hui</button>
+            </div>
+        </div>
+
+        <!-- Tab: Anticiper (avec blocs "Pourquoi ?" dépliables) -->
+        <div id="anticiper" class="tab-content">
+            <div class="info-banner">
+                <span class="info-icon">🧠</span>
+                <div class="info-text">
+                    <strong>On est là avec toi</strong><br>
+                    Chaque symptôme a une explication. Chaque plateau a une fin.
+                </div>
+            </div>
+
+            <!-- Produit 1: Cétones Exogènes BHB -->
+            <div class="product-card" data-product="bhb">
+                <div class="product-header">
+                    <h3>Cétones Exogènes BHB</h3>
+                    <span class="friction">Fatigue, maux de tête, envie d'abandonner</span>
+                </div>
+                <div class="timeline">
+                    <span class="badge urgent">Nécessaire J3</span>
+                    <span class="countdown">Commande idéale: <strong>J1</strong> · Livraison 5j</span>
+                </div>
+                <button class="btn-why" data-product="bhb">📖 Pourquoi ?</button>
+                <div class="explanation" id="explain-bhb" style="display: none;">
+                    <div class="explanation-summary">
+                        🔬 <em>"Ton foie ne produit pas encore assez de cétones — les BHB prennent le relais pour éviter la fatigue."</em>
+                    </div>
+                    <div class="explanation-mechanism">
+                        <strong>🧠 MÉCANISME :</strong><br>
+                        Pendant les 7-14 premiers jours, ton foie n'a pas encore appris à produire des cétones en quantité suffisante. Le glucose manque, les cétones ne sont pas là — ton cerveau se retrouve sans carburant. Résultat : fatigue, brouillard, irritabilité.
+                    </div>
+                    <div class="explanation-metaphor">
+                        <strong>🍲 MÉTAPHORE :</strong><br>
+                        C'est comme démarrer une voiture sans essence. Les BHB sont le jerrycan qui te permet d'atteindre la station-service (la cétose).
+                    </div>
+                    <div class="explanation-prevention">
+                        <strong>✅ CE QUE ÇA ÉVITE :</strong><br>
+                        Fatigue mentale · Maux de tête · Brouillard · Abandon J3
+                    </div>
+                    <button class="btn-order">Commander maintenant →</button>
+                </div>
+            </div>
+
+            <!-- Produit 2: Électrolytes Keto Pro -->
+            <div class="product-card" data-product="electrolytes">
+                <div class="product-header">
+                    <h3>Électrolytes Keto Pro</h3>
+                    <span class="friction">Rétention d'eau, crampes nocturnes, vertiges</span>
+                </div>
+                <div class="timeline">
+                    <span class="badge urgent">Nécessaire J2</span>
+                    <span class="countdown">Commande idéale: <strong>J1</strong> · Livraison 5j</span>
+                </div>
+                <button class="btn-why" data-product="electrolytes">📖 Pourquoi ?</button>
+                <div class="explanation" id="explain-electrolytes" style="display: none;">
+                    <div class="explanation-summary">
+                        🔬 <em>"La combustion des graisses épuise les minéraux — le corps retient l'eau pour se protéger."</em>
+                    </div>
+                    <div class="explanation-mechanism">
+                        <strong>🧠 MÉCANISME :</strong><br>
+                        Quand tu élimines les glucides, tes reins excrètent plus de sodium et d'eau. Sans électrolytes, tes muscles deviennent instables électriquement → crampes. Ton cerveau manque de signal → vertiges.
+                    </div>
+                    <div class="explanation-metaphor">
+                        <strong>🍲 MÉTAPHORE :</strong><br>
+                        Ton corps est une soupe. Les glucides, c'est l'eau. Les électrolytes, c'est le sel. Si tu enlèves l'eau sans remettre le sel, ta soupe n'a plus de goût — et tes muscles le sentent.
+                    </div>
+                    <div class="explanation-prevention">
+                        <strong>✅ CE QUE ÇA ÉVITE :</strong><br>
+                        Crampes nocturnes · Vertiges · Jambes lourdes · Stagnation
+                    </div>
+                    <button class="btn-order">Commander maintenant →</button>
+                </div>
+            </div>
+
+            <!-- Produit 3: Collagène + Magnésium -->
+            <div class="product-card" data-product="collagene">
+                <div class="product-header">
+                    <h3>Collagène + Magnésium</h3>
+                    <span class="friction">Peau qui tire, chute de cheveux, sommeil agité</span>
+                </div>
+                <div class="timeline">
+                    <span class="badge">Recommandé J5</span>
+                    <span class="countdown">Commande idéale: <strong>J3</strong> · Livraison 5j</span>
+                </div>
+                <button class="btn-why" data-product="collagene">📖 Pourquoi ?</button>
+                <div class="explanation" id="explain-collagene" style="display: none;">
+                    <div class="explanation-summary">
+                        🔬 <em>"Le collagène protège tes cheveux et ta peau pendant la perte de poids rapide."</em>
+                    </div>
+                    <div class="explanation-mechanism">
+                        <strong>🧠 MÉCANISME :</strong><br>
+                        La perte de poids rapide (2-3 kg par semaine) crée un stress métabolique. Le corps priorise les organes vitaux et peut ralentir la production de collagène. Résultat : cheveux cassants, peau qui perd son élasticité.
+                    </div>
+                    <div class="explanation-metaphor">
+                        <strong>🍲 MÉTAPHORE :</strong><br>
+                        C'est comme dégonfler un ballon trop vite — la surface se plisse. Le collagène, c'est la crème qui nourrit la peau pendant qu'elle se redessine.
+                    </div>
+                    <div class="explanation-prevention">
+                        <strong>✅ CE QUE ÇA ÉVITE :</strong><br>
+                        Chute de cheveux · Peau relâchée · Ongles cassants · Sommeil perturbé
+                    </div>
+                    <button class="btn-order">Commander maintenant →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Coach IA -->
+        <div id="coach" class="tab-content">
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai">
+                        <span class="ai-icon">⚡</span>
+                        <div class="message-bubble">
+                            Bonjour Sophie ! Je vois que tu es à J3 — le jour le plus difficile pour beaucoup.<br><br>
+                            Si tu ressens de la fatigue ou des maux de tête, c'est parfaitement normal et temporaire.<br><br>
+                            Comment tu te sens ce matin ?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-response="stagne">Je stagne depuis 3 jours</button>
+                    <button class="chat-option" data-response="epuise">Je me sens épuisée</button>
+                    <button class="chat-option" data-response="crampes">J'ai des crampes la nuit</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Répondre à Claude...">
+                    <button id="chatSend">📤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

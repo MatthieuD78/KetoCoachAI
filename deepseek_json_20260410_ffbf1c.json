@@ -1,0 +1,12 @@
+{
+  "name": "keto-coach-ai",
+  "version": "1.0.0",
+  "description": "IA coach cétogène avec anticipation des besoins",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "keywords": ["keto", "cetogene", "ia", "coach"],
+  "author": "",
+  "license": "MIT"
+}

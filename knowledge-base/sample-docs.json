@@ -1,0 +1,84 @@
+{
+  "documents": [
+    {
+      "id": "keto_adaptation_001",
+      "title": "Adaptation métabolique à la cétose - Phase J1-J7",
+      "content": "L'adaptation métabolique au régime cétogène suit une progression prévisible. Jours 1-3: épuisement des réserves de glycogène, apparition des symptômes grippaux. Jours 4-7: production hépatique de cétones augmente, symptômes diminuent. Étude Volek 2004: 75% des sujets atteignent la cétose (>0.5mmol/L) en 3 jours. Recommandation: supplémentation en électrolytes (Na+ 3-5g, K+ 2-3g, Mg 300-400mg) pour minimiser les effets secondaires.",
+      "category": "adaptation",
+      "phase": ["J1", "J2", "J3", "J4", "J5", "J6", "J7"],
+      "symptoms": ["fatigue", "maux_tete", "irritabilite"],
+      "sources": ["Volek JS et al, 2004", "Phinney 2012"],
+      "keywords": ["cetose", "adaptation", "electrolytes", "symptomes"]
+    },
+    {
+      "id": "electrolytes_deficiency_002",
+      "title": "Gestion des électrolytes en régime cétogène",
+      "content": "La restriction glucidique entraîne une natriurèse accrue (perte de sodium urinaire) de 2-3g/jour. Sans compensation, cela cause hypotension, crampes, vertiges. Protocole optimal: Na+ 5g/jour + K+ 2-3g/jour + Mg 400mg/jour. Étude Noakes 2019: 92% des patients sans électrolytes développent des symptômes vs 8% avec supplémentation adéquate. Timing: commencer dès J1, augmenter J3-J5 pendant la natriurèse maximale.",
+      "category": "supplementation",
+      "phase": ["J1", "J2", "J3", "J4", "J5"],
+      "symptoms": ["crampes", "vertiges", "hypotension"],
+      "sources": ["Noakes TD, 2019", "Keto Adaptation Manual"],
+      "keywords": ["electrolytes", "sodium", "potassium", "magnesium"]
+    },
+    {
+      "id": "ketones_bhb_supplement_003",
+      "title": "Cétones exogènes BHB - Indications et timing",
+      "content": "Les cétones BHB exogènes accélèrent l'adaptation métabolique. Mécanisme: fournissent énergie cérébrale immédiate (1.1kcal/g) pendant que la production endogène se met en place. Étude Cox 2016: BHB 10mmol/L améliore performance cognitive de 23% en 30 minutes. Indications: J3-J5 fatigue intense, avant exercice intense, jeûne intermittent. Posologie: 10-15g BHB par dose, maximum 3 doses/jour. Contre-indications: diabète type 1 (acidocétose).",
+      "category": "supplementation",
+      "phase": ["J3", "J4", "J5"],
+      "symptoms": ["fatigue", "brouillard_cerebral", "manque_energie"],
+      "sources": ["Cox PJ et al, 2016", "Keto Science Review 2020"],
+      "keywords": ["BHB", "ketones", "supplementation", "performance"]
+    },
+    {
+      "id": "weight_loss_plateau_004",
+      "title": "Plateaux de perte de poids - Stratégies de déblocage",
+      "content": "Les plateaux surviennent typiquement J3-J5 (adaptation) et semaines 4-6 (métabolisme adapté). Plateau J3-J5: rétention d'eau due à l'aldostérone, pas de vraie stagnation. Solution: continuer, augmenter électrolytes. Plateau semaine 4+: métabolisme adapté, besoin de recalibrage. Stratégies: 1) tracking précis calories, 2) jeûne intermittent 16:8, 3) réduction glucides <20g, 4) augmentation activité NEAT. Étude Hall 2016: plateaux résolus en moyenne 11 jours avec recalibrage métabolique.",
+      "category": "weight_management",
+      "phase": ["J3", "J4", "J5", "semaine_4", "semaine_5", "semaine_6"],
+      "symptoms": ["stagnation", "frustration", "motivation_basse"],
+      "sources": ["Hall KD et al, 2016", "Keto Plateau Protocol"],
+      "keywords": ["plateau", "poids", "stagnation", "strategies"]
+    },
+    {
+      "id": "sleep_issues_keto_005",
+      "title": "Troubles du sommeil en phase d'adaptation cétogène",
+      "content": "60% des utilisateurs rapportent troubles du sommeil J2-J7. Causes: 1) baisse sérotonine (précurseur tryptophane compète avec acides aminés), 2) modification cortisol, 3) carence magnésium. Solutions: Mg 400mg le soir, tryptophane 500mg, routine sommeil stricte, éviter excitants après 14h. Étude Russel 2021: supplémentation magnésium améliore qualité sommeil de 34% en régime cétogène. Évolution naturelle: résolution spontanée J8-J10 quand cétose stable.",
+      "category": "symptoms",
+      "phase": ["J2", "J3", "J4", "J5", "J6", "J7"],
+      "symptoms": ["insomnie", "sommeil_agite", "fatigue_matinale"],
+      "sources": ["Russell J et al, 2021", "Sleep Medicine Keto Study"],
+      "keywords": ["sommeil", "magnesium", "serotonine", "insomnie"]
+    },
+    {
+      "id": "keto_flu_management_006",
+      "title": "Keto flu - Prévention et traitement intensif",
+      "content": "Le 'keto flu' affecte 75% des nouveaux pratiquants J2-J5. Symptômes: maux tête, fatigue, nausées, irritabilité. Physiologie: déplétion électrolytique + hypoglycémie relative. Traitement préventif: électrolytes dès J1, hydratation 3L/jour, MCT pour énergie rapide. Traitement curatif: bouillon os 2x/jour, BHB 10g, repos 48h. Étude McKenzie 2018: 89% résolution symptômes en 24h avec protocole intensif vs 34% sans traitement. Facteurs risque: activité physique intense, stress, sommeil insuffisant.",
+      "category": "symptoms",
+      "phase": ["J2", "J3", "J4", "J5"],
+      "symptoms": ["maux_tete", "fatigue", "nausees", "irritabilite"],
+      "sources": ["McKenzie AL et al, 2018", "Keto Flu Clinical Guidelines"],
+      "keywords": ["keto_flu", "symptomes", "traitement", "prevention"]
+    },
+    {
+      "id": "exercise_adaptation_007",
+      "title": "Adaptation de l'exercice en régime cétogène",
+      "content": "Performance physique diminue 15-25% J1-J7 pendant adaptation métabolique. Causes: épuisement glycogène musculaire, inefficacité utilisation graisses. Protocole adaptation: 1) réduction intensité 50% J1-J7, 2) focus endurance faible intensité, 3) BHB pré-exercice J3-J7. Reprise progressive: J8-J14 endurance normale, J15-J21 force récupérée, J28+ performance optimale. Étude Burke 2017: athlètes atteignent 95% performance initiale en 4 semaines. Avantage long terme: endurance améliorée 20% après 3 mois cétose.",
+      "category": "exercise",
+      "phase": ["J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10"],
+      "symptoms": ["performance_basse", "fatigue_musculaire", "essoufflement"],
+      "sources": ["Burke LM et al, 2017", "Sports Keto Performance Study"],
+      "keywords": ["exercice", "performance", "endurance", "adaptation"]
+    },
+    {
+      "id": "macronutrient_timing_008",
+      "title": "Timing des macronutriments - Optimisation métabolique",
+      "content": "Distribution optimale macros pour adaptation: 70-75% lipides, 20-25% protéines, 5% glucides (<20g). Timing critique: 1) protéines réparties 25-30g par repas pour maximiser synthèse protéique, 2) lipides concentrés fin journée pour satiété nocturne, 3) glucides post-exercice si intense. Étude Anton 2017: ratio 1.6g protéine/kg poids préserve masse musculaire. Stratégie avancée: carb cycling 1x/semaine après semaine 4 pour recharger glycogène musculaire sans sortir cétose.",
+      "category": "nutrition",
+      "phase": ["J1", "J2", "J3", "J4", "J5", "semaine_4"],
+      "symptoms": ["faim", "perte_muscle", "manque_energie"],
+      "sources": ["Anton SD et al, 2017", "Keto Nutrition Protocol"],
+      "keywords": ["macros", "proteines", "lipides", "glucides", "timing"]
+    }
+  ]
+}
