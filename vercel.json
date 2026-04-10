@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/gemini-25-rag-cjs.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/chat-rag.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/lightning-rag.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ]
+}
