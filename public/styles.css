@@ -66,6 +66,26 @@ body {
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
+.logo-icon-img {
+    height: 38px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+}
+
+.logo-word {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.logo-sub {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 220, 0.55);
+}
+
 .logo-text {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -736,4 +756,4 @@ body {
     .stat-value { font-size: 20px; }
     .logo-text { font-size: 18px; }
     .chat-options { padding: 8px 12px; }
-}
+}
