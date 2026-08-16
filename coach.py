@@ -26,8 +26,8 @@ CHROMA_DIR = BASE_DIR / "data" / "chroma"
 # Collection curatée (ingérée via scripts/ingest_kb.py depuis context/theme_*.json)
 COLLECTION = "elan_keto_kb"
 
-# LLM via OpenRouter (pas cher). Surcharge par .env si présent.
-RAG_LLM_MODEL = os.environ.get("RAG_MODEL", "qwen/qwen3-32b:free")
+# LLM via OpenRouter (pas cher / gratuit). Surcharge par .env si présent.
+RAG_LLM_MODEL = os.environ.get("RAG_MODEL", "nvidia/nemotron-3-super-120b-a12b:free")
 EMBED_MODEL = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-small")
 
 # Journaux simples
@@ -161,16 +161,17 @@ def ask_llm(question, retrieved):
 
     prompt = f"""Tu es un coach bienveillant et précis en accompagnement cétogène.
 
-RÈGLES ABSOLUES :
-- Réponds UNIQUEMENT à partir du contexte ci-dessous. Si l'info n'y est pas, dis-le et oriente.
-- Ne cite JAMAIS de chiffre, étude ou conseil non présent dans le contexte.
-- Ton : encourageant, concret, jamais alarmant. Maximum 140 mots.
-- Si la question touche un diagnostic ou un traitement, rappelle de consulter un professionnel.
+CONSIGNE : réponds DIRECTEMENT à l'utilisateur comme un coach bienveillant, en français.
+- Base-toi sur les faits fournis dans CONTEXTE. Si un élément manque, dis-le simplement.
+- Ne cite pas "les documents" ni les IDs. Intègre naturellement les infos.
+- Termine par une phrase douce qui encourage, ou une question pour avancer.
+- Ton : encourageant, concret, jamais alarmant. 120 mots max.
+- Si le sujet touche un diagnostic ou un traitement, mentionne prudence (consulter un pro).
 
-CONTEXTE :
+CONTEXTE (faits vérifiés) :
 {contexte}
 
-QUESTION : {question}"""
+UTILISATEUR : {question}"""
 
     try:
         from openai import OpenAI
