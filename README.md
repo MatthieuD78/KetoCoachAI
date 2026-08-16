@@ -32,6 +32,19 @@ python main.py
 → Ouvre **http://localhost:8000** (le chat)  
 → Santé : **http://localhost:8000/api/health**
 
+## 🧪 Vérifier que rien n'est cassé (tests automatiques)
+
+Après chaque changement de code, lance :
+
+```bash
+source .venv/bin/activate
+python -m pytest test/ -v
+```
+
+6 tests vérifient : santé OK, la page s'affiche, une question normale obtient une
+réponse sourcée, une question dangereuse redirige vers un pro, et le format de la
+réponse est correct. Si tout passe (vert), l'app fonctionne toujours.
+
 ## 📁 Où sont les choses
 
 | Dossier/Fichier | Rôle |
