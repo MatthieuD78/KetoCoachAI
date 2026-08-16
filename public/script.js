@@ -1,20 +1,17 @@
 /* ============================================================
    KETO 360° — Coach IA · Les Éditions ÉLAN
-   Logique front (chat + API) — vanilla JS, sans dépendance.
+   Logique front complète (vanilla JS, sans dépendance)
+   - Navigation par onglets
+   - Gamification (XP / niveau)
+   - Courbe de poids + enregistrement
+   - Cartes compléments ("Pourquoi ?" dépliables)
+   - Chat RAG premium (POST /api/chat)
    ============================================================ */
 
 (function () {
   'use strict';
 
-  // ---------------------------------------------------------------- refs DOM
-  const chat = document.getElementById('chat');
-  const suggestionsEl = document.getElementById('suggestions');
-  const form = document.getElementById('composerForm');
-  const input = document.getElementById('chatInput');
-  const sendBtn = document.getElementById('chatSend');
-
   // ---------------------------------------------------------------- profil
-  // Profil utilisateur envoyé au backend avec chaque message.
   const userProfile = {
     phase: 'J3',
     weight: 79.2,
@@ -23,7 +20,7 @@
     symptoms: ['fatigue', 'adaptation']
   };
 
-  // ---------------------------------------------------------------- icônes SVG (inline, style unique)
+  // ---------------------------------------------------------------- icônes SVG (style unique, traits lucide)
   const ICONS = {
     coach:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
@@ -35,7 +32,14 @@
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>'
   };
 
-  // ---------------------------------------------------------------- rendu markdown-lite (sûr)
+  // ---------------------------------------------------------------- helpers DOM
+  function el(tag, className, innerHTML) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (innerHTML != null) node.innerHTML = innerHTML;
+    return node;
+  }
+
   function renderText(text) {
     if (!text) return '';
     let html = String(text)
@@ -48,17 +52,215 @@
     return html;
   }
 
-  // ---------------------------------------------------------------- création de nœuds
-  function el(tag, className, innerHTML) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (innerHTML != null) node.innerHTML = innerHTML;
-    return node;
+  // ================================================================
+  // 1. Navigation par onglets
+  // ================================================================
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  navBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const tabId = btn.getAttribute('data-tab');
+
+      navBtns.forEach(function (b) {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      panels.forEach(function (p) {
+        const active = p.id === tabId;
+        p.classList.toggle('active', active);
+        p.hidden = !active;
+      });
+    });
+  });
+
+  // ================================================================
+  // 2. Gamification (XP / niveau)
+  // ================================================================
+  const gameState = {
+    xp: 450,
+    level: 4,
+    xpToNextLevel: 1000
+  };
+
+  function updateXpUI() {
+    const percent = Math.min(100, (gameState.xp / gameState.xpToNextLevel) * 100);
+    const fill = document.querySelector('.xp-fill');
+    const level = document.querySelector('.xp-level');
+    const count = document.querySelector('.xp-count');
+    if (fill) fill.style.width = percent + '%';
+    if (level) level.textContent = 'Niv ' + gameState.level;
+    if (count) count.textContent = gameState.xp + ' XP';
   }
 
-  // ---------------------------------------------------------------- messages
+  function gainXp(amount) {
+    gameState.xp += amount;
+    if (gameState.xp >= gameState.xpToNextLevel) {
+      gameState.xp -= gameState.xpToNextLevel;
+      gameState.level += 1;
+      showLevelUp();
+    }
+    updateXpUI();
+  }
+
+  function showLevelUp() {
+    const note = el('div', 'levelup', '\u{1F389} NIVEAU SUP\u00c9RIEUR : ' + gameState.level + ' !');
+    document.body.appendChild(note);
+    setTimeout(function () { note.remove(); }, 2600);
+  }
+
+  // ================================================================
+  // 3. Courbe de poids + enregistrement
+  // ================================================================
+  const START_WEIGHT = 82;
+  const GOAL_WEIGHT = 68;
+  const chartEl = document.getElementById('weightChart');
+
+  const weightData = [
+    { date: '31/03', weight: 82 },
+    { date: '01/04', weight: 81.2 },
+    { date: '02/04', weight: 80.5 },
+    { date: '03/04', weight: 79.2 }
+  ];
+
+  function renderChart() {
+    if (!chartEl) return;
+    chartEl.innerHTML = '';
+
+    const lastIdx = weightData.length - 1;
+
+    weightData.forEach(function (entry, i) {
+      // hauteur relative entre l'objectif (0) et le départ (100)
+      const ratio = Math.max(0, (entry.weight - GOAL_WEIGHT) / (START_WEIGHT - GOAL_WEIGHT));
+      const height = Math.round(ratio * 100);
+
+      const item = el('div', 'bar-item');
+      item.appendChild(el('span', 'bar-value', entry.weight.toFixed(1)));
+
+      const bar = el('div', 'bar' + (i === lastIdx ? ' is-last' : ''));
+      bar.style.height = height + '%';
+      item.appendChild(bar);
+
+      item.appendChild(el('span', 'bar-label', entry.date));
+      chartEl.appendChild(item);
+    });
+  }
+
+  function updateProgress() {
+    const current = weightData[weightData.length - 1].weight;
+    const lost = START_WEIGHT - current;
+    const percent = Math.round((lost / (START_WEIGHT - GOAL_WEIGHT)) * 100);
+
+    const fill = document.querySelector('.progress-fill');
+    if (fill) fill.style.width = percent + '%';
+
+    const track = document.querySelector('.progress-track');
+    if (track) track.setAttribute('aria-valuenow', String(percent));
+
+    const foot = document.querySelector('.progress-foot');
+    if (foot) {
+      foot.innerHTML =
+        '<span>Objectif <strong>' + GOAL_WEIGHT + ' kg</strong></span>' +
+        '<span><strong>' + lost.toFixed(1) + ' kg</strong> d\u00e9j\u00e0 perdus · reste <strong>' +
+        (current - GOAL_WEIGHT).toFixed(1) + ' kg</strong></span>';
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('weightToast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.hidden = false;
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function () { toast.hidden = true; }, 3000);
+  }
+
+  const recordBtn = document.getElementById('recordWeightBtn');
+  const weightEntry = document.getElementById('weightEntry');
+  const weightInput = document.getElementById('weightInput');
+  const weightConfirm = document.getElementById('weightConfirm');
+  const weightCancel = document.getElementById('weightCancel');
+
+  if (recordBtn && weightEntry) {
+    recordBtn.addEventListener('click', function () {
+      weightEntry.hidden = !weightEntry.hidden;
+      if (!weightEntry.hidden) weightInput.focus();
+    });
+  }
+
+  function submitWeight() {
+    const value = parseFloat(weightInput.value.replace(',', '.'));
+    if (!value || isNaN(value) || value <= 0) {
+      weightInput.focus();
+      return;
+    }
+    const today = new Date();
+    const label = String(today.getDate()).padStart(2, '0') + '/' + String(today.getMonth() + 1).padStart(2, '0');
+
+    weightData.push({ date: label, weight: value });
+    userProfile.weight = value;
+    renderChart();
+    updateProgress();
+
+    weightInput.value = '';
+    weightEntry.hidden = true;
+    gainXp(10);
+    showToast('\u2705 Poids enregistr\u00e9 · +10 XP');
+  }
+
+  if (weightConfirm) {
+    weightConfirm.addEventListener('click', submitWeight);
+    weightInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); submitWeight(); }
+    });
+  }
+  if (weightCancel) {
+    weightCancel.addEventListener('click', function () { weightEntry.hidden = true; });
+  }
+
+  // ================================================================
+  // 4. Cartes compléments — "Pourquoi ?" dépliable
+  // ================================================================
+  document.querySelectorAll('.btn-why').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const productId = btn.getAttribute('data-product');
+      const explanation = document.getElementById('explain-' + productId);
+      if (!explanation) return;
+
+      const opening = explanation.hidden;
+      explanation.hidden = !opening;
+      btn.textContent = opening ? 'Masquer' : 'Pourquoi\u00a0?';
+      btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+      if (opening) gainXp(5);
+    });
+  });
+
+  // Boutons de commande
+  document.querySelectorAll('.btn-order').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      gainXp(50);
+      btn.textContent = '\u2713 Box en pr\u00e9paration';
+      btn.disabled = true;
+      setTimeout(function () {
+        btn.textContent = 'Commander maintenant';
+        btn.disabled = false;
+      }, 2200);
+    });
+  });
+
+  // ================================================================
+  // 5. Chat RAG premium (POST /api/chat)
+  // ================================================================
+  const chat = document.getElementById('chat');
+  const suggestionsEl = document.getElementById('suggestions');
+  const form = document.getElementById('composerForm');
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+
   function scrollToBottom() {
-    chat.scrollTop = chat.scrollHeight;
+    if (chat) chat.scrollTop = chat.scrollHeight;
   }
 
   function addUserMessage(text) {
@@ -81,7 +283,6 @@
     return body;
   }
 
-  // Indicateur "en train d'écrire…"
   function addTypingIndicator() {
     const msg = el('div', 'msg msg--coach typing-msg');
     const avatar = el('div', 'msg-avatar', ICONS.coach);
@@ -100,7 +301,6 @@
     if (t) t.remove();
   }
 
-  // ---------------------------------------------------------------- sources
   function buildSources(sources) {
     if (!sources || !sources.length) return null;
 
@@ -122,7 +322,7 @@
 
       if (src.fiabilite) {
         const lvl = String(src.fiabilite).toLowerCase();
-        const label = lvl === 'haute' ? 'Haute fiabilité' : lvl === 'faible' ? 'Fiabilité faible' : 'Fiabilité moyenne';
+        const label = lvl === 'haute' ? 'Haute fiabilit\u00e9' : lvl === 'faible' ? 'Fiabilit\u00e9 faible' : 'Fiabilit\u00e9 moyenne';
         meta.appendChild(el('span', 'fiabilite fiabilite--' + lvl, label));
       }
 
@@ -141,19 +341,16 @@
     return wrap;
   }
 
-  // ---------------------------------------------------------------- prudence santé
   function buildPrudence() {
-    const card = el(
+    return el(
       'div',
       'prudence',
       ICONS.shield +
-        '<span><strong>Prudence santé.</strong> Je suis une app de suivi, pas un médecin. ' +
-        'En cas de doute médical ou de signe inquiétant, consulte ton médecin ou un professionnel de santé.</span>'
+        '<span><strong>Prudence sant\u00e9.</strong> Je suis une app de suivi, pas un m\u00e9decin. ' +
+        'En cas de doute m\u00e9dical ou de signe inqui\u00e9tant, consulte ton m\u00e9decin ou un professionnel de sant\u00e9.</span>'
     );
-    return card;
   }
 
-  // ---------------------------------------------------------------- envoi au backend
   async function sendToBackend(message) {
     const resp = await fetch('/api/chat', {
       method: 'POST',
@@ -171,7 +368,6 @@
     const text = (message || input.value).trim();
     if (!text) return;
 
-    // 1) message utilisateur
     addUserMessage(text);
     if (!message) {
       input.value = '';
@@ -179,29 +375,26 @@
     }
     sendBtn.disabled = true;
 
-    // 2) indicateur de frappe
     const typing = addTypingIndicator();
 
     try {
       const data = await sendToBackend(text);
 
       removeTypingIndicator();
+      gainXp(15);
 
-      // 3) bulle de réponse du coach
       const body = addCoachMessage(el('div', 'bubble', renderText(data.response)));
 
-      // 4) sources éventuelles
       const srcBlock = buildSources(data.sources);
       if (srcBlock) body.appendChild(srcBlock);
 
-      // 5) alerte de prudence si medical_ref
       if (data.medical_ref) {
         body.appendChild(buildPrudence());
       }
     } catch (err) {
       removeTypingIndicator();
       const body = addCoachMessage(
-        el('div', 'bubble', "Je n'arrive pas à joindre mon système pour l'instant. Réessaie dans un instant. 💚")
+        el('div', 'bubble', "Je n'arrive pas \u00e0 joindre mon syst\u00e8me pour l'instant. R\u00e9essaie dans un instant. \ud83d\udc9a")
       );
       body.appendChild(buildPrudence());
     } finally {
@@ -210,23 +403,32 @@
     }
   }
 
-  // ---------------------------------------------------------------- listeners
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    handleSubmit();
-  });
-
-  suggestionsEl.addEventListener('click', function (e) {
-    const chip = e.target.closest('.chip');
-    if (!chip) return;
-    handleSubmit(chip.getAttribute('data-q'));
-  });
-
-  // Envoyer avec Entrée (sans shift)
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
+  if (form) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      form.requestSubmit();
-    }
-  });
+      handleSubmit();
+    });
+  }
+
+  if (suggestionsEl) {
+    suggestionsEl.addEventListener('click', function (e) {
+      const chip = e.target.closest('.chip');
+      if (!chip) return;
+      handleSubmit(chip.getAttribute('data-q'));
+    });
+  }
+
+  if (input) {
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        form.requestSubmit();
+      }
+    });
+  }
+
+  // ---------------------------------------------------------------- init
+  renderChart();
+  updateProgress();
+  updateXpUI();
 })();

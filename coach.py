@@ -27,7 +27,7 @@ CHROMA_DIR = BASE_DIR / "data" / "chroma"
 COLLECTION = "elan_keto_kb"
 
 # LLM via OpenRouter (pas cher / gratuit). Surcharge par .env si présent.
-RAG_LLM_MODEL = os.environ.get("RAG_MODEL", "nvidia/nemotron-3-super-120b-a12b:free")
+RAG_LLM_MODEL = os.environ.get("RAG_MODEL", "openai/gpt-oss-20b:free")
 EMBED_MODEL = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-small")
 
 # Journaux simples
@@ -118,12 +118,8 @@ DANGER_KEYWORDS = [
     # santé mentale / urgence
     "angoisse", "phobie", "suicide", "dépressif", "déprimé", "urgence", "danger",
 ]
-# Note de prudence ajoutée aux réponses normales (produit santé)
-SAFETY_NOTE = (
-    "\n\n⚠️ *Rappel santé* : je suis une app de suivi, pas un médecin. En cas de "
-    "doute médical, de diagnostic, ou de signe inquiétant, consulte ton médecin "
-    "ou un professionnel de santé."
-)
+# Note de prudence COURT et discrète (produit santé) — ajoutée discrètement, pas une réponse
+SAFETY_NOTE = "\n\n_ℹ️ En cas de doute médical, consulte un professionnel de santé._"
 
 def is_danger(request: str) -> bool:
     """True si la demande évoque un DANGER/symptôme nécessitant un pro.
@@ -159,16 +155,12 @@ def ask_llm(question, retrieved):
         for d in retrieved
     )
 
-    prompt = f"""Tu es un coach bienveillant et précis en accompagnement cétogène.
+    prompt = f"""Tu es un coach cétogène bienveillant et chaleureux. Réponds en français, en tutoyant, comme un ami qui motive.
 
-CONSIGNE : réponds DIRECTEMENT à l'utilisateur comme un coach bienveillant, en français.
-- Base-toi sur les faits fournis dans CONTEXTE. Si un élément manque, dis-le simplement.
-- Ne cite pas "les documents" ni les IDs. Intègre naturellement les infos.
-- Termine par une phrase douce qui encourage, ou une question pour avancer.
-- Ton : encourageant, concret, jamais alarmant. 120 mots max.
-- Si le sujet touche un diagnostic ou un traitement, mentionne prudence (consulter un pro).
+Réponds directement (ne réfléchis pas à voix haute, ne récite pas les consignes).
+Règle : 1-2 phrases pour accueillir et comprendre, puis 2-4 conseils concrets et actionnables (quantités simples), puis un mot d'encouragement. 150-200 mots. Ton amical du quotidien, jamais froid.
 
-CONTEXTE (faits vérifiés) :
+CONTEXTE (faits fiables à utiliser) :
 {contexte}
 
 UTILISATEUR : {question}"""
@@ -185,8 +177,8 @@ UTILISATEUR : {question}"""
                 {"role": "system", "content": "Tu es un coach précis, honnête, jamais halluciné."},
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.3,
-            max_tokens=320,
+            temperature=0.5,
+            max_tokens=520,
         )
         content = (resp.choices[0].message.content or "").strip()
         return content if content else fallback_response(question, retrieved)
