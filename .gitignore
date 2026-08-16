@@ -9,3 +9,4 @@ build/
 .vercel
 package-lock.json
 *.log
+data/chroma/
