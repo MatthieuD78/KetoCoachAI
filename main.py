@@ -111,7 +111,7 @@ def chat(req: ChatRequest):
         response = coach.ask_llm(message, g["docs"]) or (
             "Ma base ne permet pas de te répondre avec certitude. Reformule ou consulte un pro."
         )
-        sources = [{"id": d["id"], "titre": d["metadata"].get("titre") or d["metadata"].get("title", ""),
+        sources = [{"id": d["id"], "title": d["metadata"].get("titre") or d["metadata"].get("title", ""),
                     "fiabilite": d["metadata"].get("fiabilite", "moyenne"),
                     "pmid": d["metadata"].get("pmid", ""),
                     "journal": d["metadata"].get("journal", "")} for d in g["docs"]]

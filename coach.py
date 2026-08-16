@@ -13,6 +13,14 @@ from pathlib import Path
 
 # ------------------------------------------------ config ------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
+
+# Charger les variables d'environnement du fichier .env (clés API) si présent
+try:
+    from dotenv import load_dotenv
+    load_dotenv(BASE_DIR / ".env")
+except Exception:
+    pass
+
 KB_PATH = BASE_DIR / "knowledge-base" / "sample-docs.json"
 CHROMA_DIR = BASE_DIR / "data" / "chroma"
 # Collection curatée (ingérée via scripts/ingest_kb.py depuis context/theme_*.json)

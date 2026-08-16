@@ -143,7 +143,7 @@ function addMessage(text, isUser = false) {
 
 async function getRAGResponse(userMessage) {
     try {
-        const response = await fetch('/api/gemini-25-rag', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: userMessage, userProfile })
@@ -245,4 +245,4 @@ document.querySelectorAll('.btn-order').forEach(btn => {
 });
 
 // Initialize UI
-updateXpUI();
+updateXpUI();
