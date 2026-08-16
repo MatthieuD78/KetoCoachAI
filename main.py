@@ -15,6 +15,7 @@ import uvicorn
 from fastapi import FastAPI, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 import coach
@@ -68,6 +69,28 @@ def home():
     if idx.exists():
         return FileResponse(str(idx))
     return {"message": "Coach KETO 360° — backend prêt. Envoie POST /api/chat {message}."}
+
+
+# Sert les fichiers statiques (styles.css, script.js, assets/) sous /styles.css, /script.js, /assets/...
+app.mount("/assets", StaticFiles(directory=str(PUBLIC_DIR / "assets")), name="assets")
+
+
+@app.get("/styles.css", include_in_schema=False)
+def styles():
+    return FileResponse(str(PUBLIC_DIR / "styles.css"))
+
+
+@app.get("/script.js", include_in_schema=False)
+def script():
+    return FileResponse(str(PUBLIC_DIR / "script.js"))
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    icon = PUBLIC_DIR / "favicon.ico"
+    if icon.exists():
+        return FileResponse(str(icon))
+    return JSONResponse(status_code=204, content={"ok": True})
 
 
 @app.post("/api/chat")
