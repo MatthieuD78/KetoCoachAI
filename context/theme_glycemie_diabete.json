@@ -1,0 +1,88 @@
+{
+  "themes": [
+    {
+      "id": "glycemie_diabete",
+      "nom": "Glycémie & diabète de type 2",
+      "fiches": [
+        {
+          "id": "gly_42261542",
+          "fait_fr": "Effect of Low-Carbohydrate Diets on Glycemic Control in Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+          "resume": "Low-carbohydrate diets have gained increasing attention as a strategy for improving glycemic control in individuals with type 2 diabetes mellitus (T2DM). However, evidence from randomized controlled trials (RCTs) remains variable. This study aimed to evaluate the effect of low-carbohydrate diets on HbA1c levels in patients with T2DM through a systematic review and meta-analysis of RCTs. A systematic search was conducted to identify RCTs comparing low-carbohydrate diets with control diets in adults with T2DM, including studies with mixed populations where applicable. The primary outcome was change in HbA1c. Data were pooled using a random-effects model, and heterogeneity was assessed using th",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Effect of Low-Carbohydrate Diets on Glycemic Control in Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+            "journal": "Cureus",
+            "annee": "2026",
+            "pmid": "42261542",
+            "doi": "10.7759/cureus.108479"
+          }
+        },
+        {
+          "id": "gly_41020034",
+          "fait_fr": "Long-Term Efficacy and Safety of a Low-Carbohydrate Diet in Type 2 Diabetes Remission: A Systematic Review.",
+          "resume": "Type 2 diabetes mellitus (T2DM) is a major global health concern with increasing prevalence and healthcare costs. Despite the availability of pharmacological interventions, sustained glycemic control and disease remission remain challenging. Dietary strategies such as low-carbohydrate diets (LCDs) and ketogenic diets (KDs) are gaining attention for their potential to improve metabolic parameters and induce T2DM remission. The objective of this review is to evaluate the long-term efficacy and safety of low-carbohydrate and ketogenic diets in the management and remission of type 2 diabetes mellitus. The systematic review was conducted following Preferred Reporting Items for Systematic Reviews ",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Long-Term Efficacy and Safety of a Low-Carbohydrate Diet in Type 2 Diabetes Remission: A Systematic Review.",
+            "journal": "Cureus",
+            "annee": "2025",
+            "pmid": "41020034",
+            "doi": "10.7759/cureus.93340"
+          }
+        },
+        {
+          "id": "gly_39912024",
+          "fait_fr": "Efficacy of Low-Carbohydrate Diets Versus Low-Fat Diets in Glycemic Control Among Patients With Type 2 Diabetes: A Systematic Review.",
+          "resume": "This systematic review evaluates the comparative efficacy of low-carbohydrate diets (LCDs) versus low-fat diets (LFDs) in improving glycemic control, weight management, and lipid profiles in individuals with type 2 diabetes mellitus (T2DM) or prediabetes. Seven randomized controlled trials involving diverse populations were included, with dietary interventions ranging from very low-carbohydrate ketogenic (LCK) diets (typically &lt;10% of total caloric intake from carbohydrates, with higher fat and moderate protein) to moderate carbohydrate regimens (30-45% of total calories). LFDs, in contrast, prioritized carbohydrate intake (50-60% of total calories), with reduced fat (&lt;20-30%) and mode",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Efficacy of Low-Carbohydrate Diets Versus Low-Fat Diets in Glycemic Control Among Patients With Type 2 Diabetes: A Systematic Review.",
+            "journal": "Cureus",
+            "annee": "2025",
+            "pmid": "39912024",
+            "doi": "10.7759/cureus.77004"
+          }
+        },
+        {
+          "id": "gly_39385794",
+          "fait_fr": "Impact of low-carbohydrate diet on health status: an umbrella review.",
+          "resume": "The prevalence of diet-related non-communicable diseases has increased. A low-carbohydrate diet (LCDs) is one of the most popular interventions. Several systematic reviews and meta-analyses of randomised clinical trials (RCTs) and non-RCTs have linked LCDs to the management of obesity, diabetes, cardiovascular disease, epilepsy, and cancer. However, there has been limited appraisal of the strength and quality of this evidence. To systematically appraise existing meta-analyses and systematic reviews of RCTs and non-RCTs on the effects of LCDs on different health conditions. To understand their potential efficacy, we summarised the studies' findings and assessed the strength of the evidence. A",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Impact of low-carbohydrate diet on health status: an umbrella review.",
+            "journal": "Frontiers in nutrition",
+            "annee": "2024",
+            "pmid": "39385794",
+            "doi": "10.3389/fnut.2024.1321198"
+          }
+        },
+        {
+          "id": "gly_39030553",
+          "fait_fr": "Impact of very low carbohydrate ketogenic diets on cardiovascular risk factors among patients with type 2 diabetes; GRADE-assessed systematic review and meta-analysis of clinical trials.",
+          "resume": "This study was designed to evaluate the impact of VLCKD on cardiovascular risk factors in patients with T2DM. Until March 2024, extensive searches were conducted on PubMed, Scopus, Web of Science, Embase, and other relevant databases. The purpose was to identify clinical trials examining the impact of VLCKD on glycemic control, lipid profile, and blood pressure. The GRADE (Grading of Recommendations Assessment, Development, and Evaluation) method was used to assess the evidence's degree of certainty. Our initial search found a total of 2568 records and finally 29 trials were included in final analysis. Our results showed that adherence from VLCKD led to significant reduction in fasting blood",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Impact of very low carbohydrate ketogenic diets on cardiovascular risk factors among patients with type 2 diabetes; GRADE-assessed systematic review and meta-analysis of clinical trials.",
+            "journal": "Nutrition &amp; metabolism",
+            "annee": "2024",
+            "pmid": "39030553",
+            "doi": "10.1186/s12986-024-00824-w"
+          }
+        },
+        {
+          "id": "gly_38006799",
+          "fait_fr": "The effects of the ketogenic diet for the management of type 2 diabetes mellitus: A systematic review and meta-analysis of recent studies.",
+          "resume": "To systematically review the effects of the ketogenic diet on glycaemic control, body weight, cardiovascular risk factors, and liver and kidney function in patients with type 2 diabetes. PubMed, MEDLINE, Embase, Cochrane Library and CINAHL were searched for randomised controlled trials published between 2001 and 2021 that compared the ketogenic diet to a control diet for effects on glycaemic control, body weight, cardiovascular risk factors, liver and renal function markers in adults with type 2 diabetes for &gt;14 days. Meta-analyses using fixed or random effects models were conducted. Nineteen reports from 11 randomised controlled trials were included. Compared to the control, the ketogeni",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "The effects of the ketogenic diet for the management of type 2 diabetes mellitus: A systematic review and meta-analysis of recent studies.",
+            "journal": "Diabetes &amp; metabolic syndrome",
+            "annee": "2024",
+            "pmid": "38006799",
+            "doi": "10.1016/j.dsx.2023.102905"
+          }
+        }
+      ]
+    }
+  ]
+}

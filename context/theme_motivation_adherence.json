@@ -1,0 +1,88 @@
+{
+  "themes": [
+    {
+      "id": "motivation_adherence",
+      "nom": "Motivation & adhésion",
+      "fiches": [
+        {
+          "id": "motivation_42553706",
+          "fait_fr": "Health Mode On and Health Mode On Plus: a multisite protocol to assess and promote mental wellbeing and healthy lifestyles among Italian university students.",
+          "resume": "University is a pivotal life-course transition in which academic, social and geographic changes intersect with heightened risk for mental disorders and maladaptive behaviors. Health Mode On (HMO) and its longitudinal expansion Health Mode On Plus (HMO+), funded by the Italian Ministry of University and Research (MUR) competitive PRO-BEN 1 and PRO-BEN 2 calls, couple harmonized surveillance with a ",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Health Mode On and Health Mode On Plus: a multisite protocol to assess and promote mental wellbeing and healthy lifestyles among Italian university students.",
+            "journal": "Frontiers in public health",
+            "annee": "2026",
+            "pmid": "42553706",
+            "doi": "10.3389/fpubh.2026.1786142"
+          }
+        },
+        {
+          "id": "motivation_42552918",
+          "fait_fr": "Personalized nutrition interventions using digital technologies for older adults: a scoping review.",
+          "resume": "As global populations age, nutrition management is important for healthy aging. Digital technologies, including mobile applications, web-based platforms, messaging tools, and artificial intelligence (AI)-enabled systems, are used in personalized nutrition interventions. However, evidence on their characteristics, effectiveness, and user experiences remains limited. This scoping review examined tec",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Personalized nutrition interventions using digital technologies for older adults: a scoping review.",
+            "journal": "Clinical nutrition research",
+            "annee": "2026",
+            "pmid": "42552918",
+            "doi": "10.7762/cnr.2026.0027"
+          }
+        },
+        {
+          "id": "motivation_42523568",
+          "fait_fr": "Workplace Interventions to Improve Physical Activity, Reduce Sedentary Behavior, and Promote Healthy Diet Among Employees in Low- and Middle- Income Countries: A Systematic Review.",
+          "resume": "Cardiovascular diseases (CVD) are the leading cause of mortality globally, with a disproportionate burden in low- and middle-income countries (LMIC). The workplace presents a strategic setting for preventive interventions targeting modifiable risk factors like physical inactivity, sedentary behavior, and poor diet among adults. This systematic review aimed to synthesize evidence on the effectivene",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Workplace Interventions to Improve Physical Activity, Reduce Sedentary Behavior, and Promote Healthy Diet Among Employees in Low- and Middle- Income Countries: A Systematic Review.",
+            "journal": "Research square",
+            "annee": "2026",
+            "pmid": "42523568",
+            "doi": "10.21203/rs.3.rs-9730653/v1"
+          }
+        },
+        {
+          "id": "motivation_42522425",
+          "fait_fr": "Clinical Decision Support for Digital Dietary Counseling Under GLP-1 Receptor Agonist Therapy: Convergent Mixed Methods Usability and Treatment Satisfaction Pilot Study of the Personalized Nutrition A",
+          "resume": "Dietary counseling is an essential complement to the growing use of glucagon-like peptide-1 receptor agonists (GLP-1 RAs) to achieve sustainable weight loss. Diverse patient needs, the demand for ongoing support, and limited resources underscore the potential of using digital support tools. This study aimed to evaluate the usability, treatment satisfaction, and weight effects of a personalized nut",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Clinical Decision Support for Digital Dietary Counseling Under GLP-1 Receptor Agonist Therapy: Convergent Mixed Methods Usability and Treatment Satisfaction Pilot Study of the Personalized Nutrition A",
+            "journal": "JMIR formative research",
+            "annee": "2026",
+            "pmid": "42522425",
+            "doi": "10.2196/81112"
+          }
+        },
+        {
+          "id": "motivation_42475251",
+          "fait_fr": "Efficacy of a Mobile Health App in Promoting Breastfeeding and Young Child Feeding Practices in Pakistan: Protocol for a Randomized Controlled Trial.",
+          "resume": "In Pakistan, one-third of under-5 deaths (58/1000 live births) are attributable to the high prevalence of stunting (40%), underweight (23%), and wasting (17.7%). Given the suboptimal prevalence of exclusive breastfeeding (EBF; 48%) and the alarmingly low consumption of a minimum acceptable diet (3.6%), mitigation of early-life nutritional risk provides a critical window of opportunity for interven",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Efficacy of a Mobile Health App in Promoting Breastfeeding and Young Child Feeding Practices in Pakistan: Protocol for a Randomized Controlled Trial.",
+            "journal": "JMIR research protocols",
+            "annee": "2026",
+            "pmid": "42475251",
+            "doi": "10.2196/93181"
+          }
+        },
+        {
+          "id": "motivation_42468966",
+          "fait_fr": "Dietary and lifestyle interventions for overweight and obesity in post-acute stroke rehabilitation: a scoping review.",
+          "resume": "Overweight and obesity are prevalent among individuals in post-acute stroke rehabilitation and are associated with poorer functional outcomes and increased cardiovascular risk. Interventions targeting weight management in this population are complex and often involve multiple behavioural components; however, characteristics are not well defined. This scoping review aimed to identify and map the li",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Dietary and lifestyle interventions for overweight and obesity in post-acute stroke rehabilitation: a scoping review.",
+            "journal": "BMJ open",
+            "annee": "2026",
+            "pmid": "42468966",
+            "doi": "10.1136/bmjopen-2026-120345"
+          }
+        }
+      ]
+    }
+  ]
+}

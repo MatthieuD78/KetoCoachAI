@@ -1,0 +1,62 @@
+{
+  "themes": [
+    {
+      "id": "electrolytes",
+      "nom": "Électrolytes & équilibre hydrique",
+      "fiches": [
+        {
+          "id": "elec_40999316",
+          "fait_fr": "Ketone body supplementation in keto-adapted mice reveals metabolic adaptations and glycogen-independent exercise capacity.",
+          "resume": "Ketone body supplementation has gained attention for its metabolic effects, but its impact on exercise metabolism remains controversial. We hypothesized that the metabolic response to ketone supplementation differs between keto-adapted and keto-na&#xef;ve states. In this study, we investigated the effects of &#x3b2;-hydroxybutyrate (BHB) supplementation in keto-adapted mice. Mice were assigned to ",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Ketone body supplementation in keto-adapted mice reveals metabolic adaptations and glycogen-independent exercise capacity.",
+            "journal": "Physiological reports",
+            "annee": "2025",
+            "pmid": "40999316",
+            "doi": "10.14814/phy2.70583"
+          }
+        },
+        {
+          "id": "elec_40566521",
+          "fait_fr": "The 4Rs Framework of Sports Nutrition: An Update with Recommendations to Evaluate Allostatic Load in Athletes.",
+          "resume": "The 4Rs of sports nutrition were proposed in recent years as an evidence-based framework to optimize post-exercise recovery within the context of allostasis. Under this paradigm, it is important to consider that each R represents a factor with a tremendous influence on the allostatic response and improves individual components of the allostatic load (AL), which will positively impact the exercise-",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "The 4Rs Framework of Sports Nutrition: An Update with Recommendations to Evaluate Allostatic Load in Athletes.",
+            "journal": "Life (Basel, Switzerland)",
+            "annee": "2025",
+            "pmid": "40566521",
+            "doi": "10.3390/life15060867"
+          }
+        },
+        {
+          "id": "elec_40043832",
+          "fait_fr": "Therapeutic Ketosis for Heart Failure: A State-of-the-Art Review.",
+          "resume": "Heart failure is characterized by an energy-deprived heart, and in recent years it has been found that the failing heart increases ketone body oxidation to meet its energy demands. Accumulating evidence suggests that this metabolic adaptation is cardioprotective, suggesting that interventions that boost blood ketone levels could aid the failing heart. Indeed, multiple small clinical trials with sh",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Therapeutic Ketosis for Heart Failure: A State-of-the-Art Review.",
+            "journal": "Journal of cardiac failure",
+            "annee": "2025",
+            "pmid": "40043832",
+            "doi": "10.1016/j.cardfail.2025.01.028"
+          }
+        },
+        {
+          "id": "elec_31699159",
+          "fait_fr": "International Society of Sports Nutrition Position Stand: nutritional considerations for single-stage ultra-marathon training and racing.",
+          "resume": "Background In this Position Statement, the International Society of Sports Nutrition (ISSN) provides an objective and critical review of the literature pertinent to nutritional considerations for training and racing in single-stage ultra-marathon. Recommendations for Training. i) Ultra-marathon runners should aim to meet the caloric demands of training by following an individualized and periodized",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "International Society of Sports Nutrition Position Stand: nutritional considerations for single-stage ultra-marathon training and racing.",
+            "journal": "Journal of the International Society of Sports Nutrition",
+            "annee": "2020",
+            "pmid": "31699159",
+            "doi": "10.1186/s12970-019-0312-9"
+          }
+        }
+      ]
+    }
+  ]
+}

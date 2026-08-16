@@ -1,0 +1,88 @@
+{
+  "themes": [
+    {
+      "id": "securite_precautions",
+      "nom": "Sécurité & précautions",
+      "fiches": [
+        {
+          "id": "securite_42482152",
+          "fait_fr": "Nutritional interventions and dietary supplements in muscle diseases: a systematic review.",
+          "resume": "Medical nutrition therapy significantly impacts cardiovascular risk and overall health, but effects on muscle diseases remain unclear. This systematic review evaluates the safety and efficacy of dietary interventions and supplements on muscle disease outcomes. A multidisciplinary team conducted a PRISMA-guided systematic review registered on PROSPERO. Searches were conducted across multiple databa",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Nutritional interventions and dietary supplements in muscle diseases: a systematic review.",
+            "journal": "Rheumatology (Oxford, England)",
+            "annee": "2026",
+            "pmid": "42482152",
+            "doi": "10.1093/rheumatology/keag378"
+          }
+        },
+        {
+          "id": "securite_42466787",
+          "fait_fr": "Ketogenic diet in adult obesity: safety, limitations, and evidence from various clinical applications.",
+          "resume": "The aim of this study was to present the current state of knowledge regarding the use of the ketogenic diet in the treatment of obesity in adults, with particular emphasis on its safety, indications, and contraindications, and to relate these findings to its established use in drug-resistant epilepsy and other clinical conditions. Despite growing interest in its clinical application, the effective",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Ketogenic diet in adult obesity: safety, limitations, and evidence from various clinical applications.",
+            "journal": "Roczniki Panstwowego Zakladu Higieny",
+            "annee": "2026",
+            "pmid": "42466787",
+            "doi": "10.32394/rpzh/225527"
+          }
+        },
+        {
+          "id": "securite_42395849",
+          "fait_fr": "Ketogenic diet, cardiometabolic diseases and aging.",
+          "resume": "The ketogenic diet (KD), characterized by a high-fat, moderate-protein, and low-carbohydrate macronutrient composition, has gained growing interest as a potential nutritional approach to cardiometabolic diseases and aging. Emerging evidence suggests that ketone bodies, particularly &#x3b2;-hydroxybutyrate, act not only as alternative energy substrates but also as signaling molecules that influence",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Ketogenic diet, cardiometabolic diseases and aging.",
+            "journal": "Journal of geriatric cardiology : JGC",
+            "annee": "2026",
+            "pmid": "42395849",
+            "doi": "10.26599/1671-5411.2026.05.005"
+          }
+        },
+        {
+          "id": "securite_42047192",
+          "fait_fr": "Ketogenic Diets and Low-Density Lipoprotein Cholesterol in Adults With Normal Weight: An Emerging Clinical Challenge.",
+          "resume": "Ketogenic diets (KDs) are increasingly being adopted by adults with normal body mass index for health and performance-related reasons. Accumulating evidence shows that this population is susceptible to large increases in low-density lipoprotein cholesterol (LDL-C) when consuming KDs, raising concerns about long-term atherosclerotic cardiovascular disease (ASCVD) risk. This review synthesizes curre",
+          "fiabilite": "moyenne",
+          "source": {
+            "titre": "Ketogenic Diets and Low-Density Lipoprotein Cholesterol in Adults With Normal Weight: An Emerging Clinical Challenge.",
+            "journal": "Journal of the American Heart Association",
+            "annee": "2026",
+            "pmid": "42047192",
+            "doi": "10.1161/JAHA.125.048903"
+          }
+        },
+        {
+          "id": "securite_41931708",
+          "fait_fr": "Exploring Non-pharmacological Hypertension Management: DASH, Paleolithic, and Ketogenic Diet Comparisons: A Systematic Review.",
+          "resume": "Hypertension impacts over one-third of the global population of adults and is a significant contributor to premature mortality, despite substantial progress in pharmaceutical interventions. Increasing evidence supports dietary strategies for the prevention and supplementary management of hypertension. This systematic review was conducted in accordance with PRISMA 2020 guidelines. Literature was re",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Exploring Non-pharmacological Hypertension Management: DASH, Paleolithic, and Ketogenic Diet Comparisons: A Systematic Review.",
+            "journal": "Current hypertension reviews",
+            "annee": "2026",
+            "pmid": "41931708",
+            "doi": "10.2174/0115734021423628260212091911"
+          }
+        },
+        {
+          "id": "securite_41370101",
+          "fait_fr": "Exploring the Ketogenic Diet as Adjunctive Therapy in Multiple Sclerosis: A Review.",
+          "resume": "Multiple sclerosis (MS) is a chronic autoimmune disease that affects the central nervous system, leading to inflammation, demyelination, and neurodegeneration. Although disease-modifying therapies (DMTs) have shown efficacy in reducing relapse rates, they offer limited benefit in addressing cognitive symptoms and overall disease burden. The ketogenic diet (KD), a high-fat, low-carbohydrate dietary",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Exploring the Ketogenic Diet as Adjunctive Therapy in Multiple Sclerosis: A Review.",
+            "journal": "Restorative neurology and neuroscience",
+            "annee": "2026",
+            "pmid": "41370101",
+            "doi": "10.1177/09226028251404071"
+          }
+        }
+      ]
+    }
+  ]
+}

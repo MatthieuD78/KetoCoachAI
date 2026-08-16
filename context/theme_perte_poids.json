@@ -1,0 +1,49 @@
+{
+  "themes": [
+    {
+      "id": "perte_poids",
+      "nom": "Perte de poids & composition corporelle",
+      "fiches": [
+        {
+          "id": "poids_41601892",
+          "fait_fr": "Efficacy and safety of antioxidants and dietary therapies for epilepsy: an umbrella meta-analysis.",
+          "resume": "Epilepsy is a prevalent chronic neurological disorder. A substantial proportion of patients develop drug-resistant epilepsy. Existing antiepileptic drugs are associated with adverse effects and demonstrate limited efficacy in refractory cases. Oxidative stress plays a critical role in the pathogenesis of epilepsy. Antioxidants such as vitamin D, vitamin E, and melatonin, as well as dietary therapi",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Efficacy and safety of antioxidants and dietary therapies for epilepsy: an umbrella meta-analysis.",
+            "journal": "Frontiers in nutrition",
+            "annee": "2026",
+            "pmid": "41601892",
+            "doi": "10.3389/fnut.2025.1723370"
+          }
+        },
+        {
+          "id": "poids_37231411",
+          "fait_fr": "Effects of ketogenic diet on health outcomes: an umbrella review of meta-analyses of randomized clinical trials.",
+          "resume": "Systematic reviews and meta-analyses of randomized clinical trials (RCTs) have reported the benefits of ketogenic diets (KD) in various participants such as patients with epilepsy and adults with overweight or obesity. Nevertheless, there has been little synthesis of the strength and quality of this evidence in aggregate. To grade the evidence from published meta-analyses of RCTs that assessed the",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Effects of ketogenic diet on health outcomes: an umbrella review of meta-analyses of randomized clinical trials.",
+            "journal": "BMC medicine",
+            "annee": "2023",
+            "pmid": "37231411",
+            "doi": "10.1186/s12916-023-02874-y"
+          }
+        },
+        {
+          "id": "poids_34796367",
+          "fait_fr": "Diets for weight management in adults with type 2 diabetes: an umbrella review of published meta-analyses and systematic review of trials of diets for diabetes remission.",
+          "resume": "Weight reduction is fundamental for type 2 diabetes management and remission, but uncertainty exists over which diet type is best to achieve and maintain weight loss. We evaluated dietary approaches for weight loss, and remission, in people with type 2 diabetes to inform practice and clinical guidelines. First, we conducted a systematic review of published meta-analyses of RCTs of weight-loss diet",
+          "fiabilite": "forte",
+          "source": {
+            "titre": "Diets for weight management in adults with type 2 diabetes: an umbrella review of published meta-analyses and systematic review of trials of diets for diabetes remission.",
+            "journal": "Diabetologia",
+            "annee": "2022",
+            "pmid": "34796367",
+            "doi": "10.1007/s00125-021-05577-2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "themes": [
+    {
+      "id": "adaptation_keto_flu",
+      "nom": "Adaptation cétogène & 'keto flu'",
+      "description": "Comment le corps s'adapte au régime cétogène, les symptômes transitoires du début et la gestion du 'keto flu'.",
+      "fiches": [
+        {
+          "id": "ketoflu_2020",
+          "fait_fr": "Le 'keto flu' regroupe des symptômes temporaires (fatigue, maux de tête, irritabilité) rapportés au début du régime cétogène, pendant les premiers jours d'adaptation métabolique.",
+          "mecanisme": "Transition des réserves de glycogène vers la production de cétones hépatiques ; phase d'adaptation des 3-7 premiers jours.",
+          "conseil_clinique": "Symptômes transitoires et bénins chez la plupart ; hydratation + électrolytes adaptés (sodium, potassium, magnésium) recommandés.",
+          "limites": "Étude observationnelle basée sur le rapport d'utilisateurs, pas un essai contrôlé ; les intensités varient.",
+          "source": {
+            "titre": "Consumer Reports of 'Keto Flu' Associated With the Ketogenic Diet",
+            "journal": "Frontiers in Nutrition",
+            "annee": 2020,
+            "pmid": 32232045,
+            "doi": "10.3389/fnut.2020.00020"
+          },
+          "fiabilite": "forte"
+        },
+        {
+          "id": "carb_restrict_mood_2021",
+          "fait_fr": "Des niveaux variables de restriction glucidique influencent l'humeur et les symptômes de sevrage glucidique durant l'atteinte de la cétose nutritionnelle.",
+          "mecanisme": "La réduction des glucides modifie certains neuromodulateurs et l'équilibre hormonal associé à l'humeur pendant l'adaptation.",
+          "mise_en_garde": "Les effets sur l'humeur sont variables d'une personne à l'autre ; surveiller le moral durant la phase d'adaptation.",
+          "limites": "Recherche limitée ; résultats préliminaires, besoin de plus d'essais.",
+          "source": {
+            "titre": "Effects of differing levels of carbohydrate restriction on mood and achievement of nutritional ketosis",
+            "journal": "Nutrition (Burbank)",
+            "annee": 2021,
+            "pmid": 34332710,
+            "doi": "10.1016/j.nutx.2019.100005"
+          },
+          "fiabilite": "moyenne"
+        },
+        {
+          "id": "keto_brain_2013",
+          "fait_fr": "Le régime cétogène a des effets métaboliques sur l'excitabilité cérébrale, ce qui sous-tend son usage clinique historique (notamment en épilepsie).",
+          "mecanisme": "Les corps cétoniques (BHB) modifient le métabolisme neuronal et l'équilibre des neurotransmetteurs excitateurs/inhibiteurs.",
+          "mise_clut": "Base physiologique de l'effet cétogène, hors indication large ; ne pas généraliser à des conseils médicaux.",
+          "limites": "Contexte historique pédiatrique (épilepsie), mécanisme encore partiellement compris.",
+          "source": {
+            "titre": "The ketogenic diet: metabolic influences on brain excitability and epilepsy",
+            "journal": "Trends in Neurosciences",
+            "annee": 2013,
+            "pmid": 23228828,
+            "doi": "10.1016/j.tins.2012.11.005"
+          },
+          "fiabilite": "forte"
+        }
+      ]
+    }
+  ]
+}
